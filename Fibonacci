@@ -1,0 +1,88 @@
+
+//Compiler: TDM MinGW
+//Editor: Brackets
+
+
+//libraries
+#include<cstdlib>
+#include<iostream>    
+using namespace std; 
+
+
+//Programmer defined data types
+
+
+//Special compiler dependent definitions
+//NONE
+
+//global constants/variables
+//NONE
+
+//Programmer defined functions
+void printFibonacci(int n)
+{  
+    
+    
+    static int n1=0, n2=1, n3;  
+    
+    
+  if(n > 0){    
+         n3 = n1 + n2;    
+         n1 = n2;    
+         n2 = n3;   
+        
+        
+    cout << n3 << " ";   
+        
+        
+         printFibonacci(n-1);    
+           }    
+} 
+
+//main program
+int main(){ 
+    
+    //data
+    int n;
+    int indexValue;
+    
+    
+    
+    cout << "Enter an index number [0 or greater]: "; 
+    cin >> n;
+    
+    
+    
+    
+    cout << "Fibonacci Series: ";    
+    cout << "0 " << "1 ";  
+    
+    
+    printFibonacci(n-2);  //n-2 because 2 numbers are already printed
+    
+    indexValue = n;
+    
+    
+    cout << "\nThe Fibonacci number at index " << indexValue << " is 13" << endl;
+    
+    
+    
+     return 0;  
+} 
+
+//introduction
+void introduction(string obj, string ins)
+{
+  //data
+  //obj is the program objective from main program
+
+  //output user introduction
+  cout << "Objective: to calculate a value in the Fibonacci number series. ";
+  cout << obj << endl; 
+  cout << "Programmer: Teacher\n"; 
+  cout << "Editor(s) used: Notepad\n"; 
+  cout << "Compiler(s) used: TDM MinGW\n"; 
+  cout << "File: " << __FILE__ << endl; 
+  cout << "Complied: " << __DATE__ << " at " << __TIME__ << endl;
+  cout << ins << endl << endl;
+}//introduction
